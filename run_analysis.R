@@ -63,5 +63,5 @@ merged_data <- merged_data_all[,the_ones_we_want]
 
 mdata <- melt(merged_data, id=c("subjectid","activity"))
 tidy_data <- cast(mdata,subjectid + activity ~ variable, mean)
-write.csv(tidy_data,file="./tidy_data.csv")
+write.table(tidy_data,file="./tidy_data.txt",row.names = FALSE)
 
